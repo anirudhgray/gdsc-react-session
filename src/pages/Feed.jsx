@@ -28,7 +28,7 @@ const SocialMediaFeed = () => {
     <div className="max-w-3xl mx-auto my-8 px-4">
       <h1 className="text-3xl font-semibold mb-4">GDSC React Session (Social Media Feed)</h1>
       <input placeholder='Search' className='px-4 w-full py-2 mb-4 rounded-md bg-white shadow-md' value={search} onChange={e=>setSearch(e.currentTarget.value)} />
-      <div className="space-y-4">
+      <div className="flex flex-col gap-4">
         {filteredPosts.map((post) => (
           <Post id={post.id} key={post.id} userid={post.userId} title={post.title} body={post.body}  />
         ))}

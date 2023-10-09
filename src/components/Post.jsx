@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 Post.propTypes = {
   userid: PropTypes.number.isRequired,
@@ -9,10 +10,12 @@ Post.propTypes = {
 
 export default function Post({userid, title, body, id}) {
   return (
-    <div key={id} className="bg-white p-4 shadow-md rounded-md">
+    <Link to={`/posts/${id}`}>
+    <div key={id} className="bg-white p-4 shadow-md rounded-md hover:bg-blue-500 hover:text-white">
         <h2 className="text-xl font-semibold">{title}</h2>
-        <p className="text-gray-600 mt-2">{body}</p>
-        <div className="text-sm text-gray-500 mt-4">User ID: {userid}</div>
+        <p className="mt-2">{body}</p>
+        <div className="text-sm mt-4">User ID: {userid}</div>
     </div>
+    </Link>
   )
 }
